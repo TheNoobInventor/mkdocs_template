@@ -5,3 +5,5 @@ and the [material theme](https://squidfunk.github.io/mkdocs-material/getting-sta
 The script is well documented and each section can be edited to suit the required structure of the project.
 
 ## Running bash script
+
+(to be completed)
