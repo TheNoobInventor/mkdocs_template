@@ -8,6 +8,7 @@ The script is well documented and each section can be edited to suit the require
 
 (to be completed)
 
+* Copy any README contents here
 * Run script in repo directory
 * Change repo url and name and anything else in mkdocs.yml file
 * Move any folders/files needed by index.md into the 'docs' folder 

@@ -9,30 +9,35 @@ sudo apt install python3-pip mkdocs
 # Navigate to root folder of repository and execute the following command to create a new MkDocs project 
 mkdocs new .
 
-# Prompt user for name of the projeect
+# Prompt user for name of the project
 read -p "Enter the name of your project: " proj_name
 
 # Configuration parameters to be written in the newly created mkdocs.yml config file
 cat <<EOT > mkdocs.yml
 site_name: $proj_name
-site_url: ''
+site_url: 'https:/sample.github.io/sample/'
 use_directory_urls: False
-edit_uri: ""
 
 theme:
   name: material
   palette:
     - scheme: default
-      primary: teal
+      primary: indigo 
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
     - scheme: slate
-      primary: teal
+      primary: indigo
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-repo_url: https://github.com/example/example-repo
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - toc.integrate
+repo_url: https://github.com/sample/sample-repo
 repo_name: example/example-repo
 plugins:
   - search:
@@ -46,11 +51,10 @@ cat <<EOT > docs/index.md
 ## Hardware
 
 ### Components
-This includes tools and misc like double sided tape
-Pictures of some components/sensors
+Tools and sensors used 
 
-### Assembly
-Notes about assembly. Some observations too
+### Project assembly
+Assembly steps 
 Pictures of the assembled project
 
 ## Software
@@ -59,7 +63,7 @@ Pictures of the assembled project
 Software used
 
 ### Software install
-how to download and run the code
+How to download and run the code
 
 ## Video demonstration
 
@@ -76,10 +80,10 @@ echo "Project markdown template written in ./docs/index.md file"
 # Referral page for the MkDocs documentation included in the default README.md file
 
 cat <<EOT > README.md
-![Mkdocs workflow](https://github.com/TheNoobInventor/REPO_NAME/actions/workflows/.github/workflows/main.yml/badge.svg)
+![Mkdocs workflow](https://github.com/sample/sample-repo/actions/workflows/.github/workflows/main.yml/badge.svg)
 # $proj_name
 
-The documentation for this project can be found [here](https://example.github.io/example/).
+The documentation for this project can be found [here](https:/sample.github.io/sample/).
 
 EOT
 
