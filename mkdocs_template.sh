@@ -81,6 +81,7 @@ echo "Project markdown template written in ./docs/index.md file"
 
 cat <<EOT > README.md
 ![Mkdocs workflow](https://github.com/sample/sample-repo/actions/workflows/.github/workflows/main.yml/badge.svg)
+
 # $proj_name
 
 The documentation for this project can be found [here](https:/sample.github.io/sample/).
