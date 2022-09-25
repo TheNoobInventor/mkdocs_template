@@ -205,6 +205,7 @@ We will be creating a GitHub workflow to perform the task of deploying the docs 
   </p>
 
 </ol>
+
 In the workflow file, the MkDocs material theme is installed and the docs are deployed. Make sure to edit the environment secrets according to the name you chose in this fields of the file, `MKDOCS` was used in this case:
 
 ```
@@ -229,7 +230,7 @@ Make the appropriate changes to the workflow link in the project `README.md` fil
 
 ## References
 
-More information on the packages and tools used can be found in the references below.
+Further information on the packages and tools used can be found in the references below.
 
 - [MkDocs](https://www.mkdocs.org/getting-started/)
 - [Material theme](https://squidfunk.github.io/mkdocs-material/getting-started/)
