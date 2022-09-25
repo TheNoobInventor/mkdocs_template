@@ -15,7 +15,7 @@ read -p "Enter the name of your project: " proj_name
 # Configuration parameters to be written in the newly created mkdocs.yml config file
 cat <<EOT > mkdocs.yml
 site_name: $proj_name
-site_url: 'https:/sample.github.io/sample/'
+site_url: ''
 use_directory_urls: False
 
 theme:
