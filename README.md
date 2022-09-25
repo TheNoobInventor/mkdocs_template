@@ -230,7 +230,7 @@ Make the appropriate changes to the workflow link in the project `README.md` fil
 
 ## References
 
-Further information on the packages and tools used can be found in the references below.
+More information on the packages and tools used can be found in the references below.
 
 - [MkDocs](https://www.mkdocs.org/getting-started/)
 - [Material theme](https://squidfunk.github.io/mkdocs-material/getting-started/)
