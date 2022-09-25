@@ -132,7 +132,13 @@ mkdocs gh-deploy
 
 This command builds the docs, uses the [ghp-import](https://github.com/c-w/ghp-import) tool to commit them to the gh-pages branch and pushes the gh-pages branch to GitHub.
 
-A `github.io` link to the documentation is provided at the end of the deploy process. This link should be copied and pasted into the last line of the `README.md` file that has a sample placeholder link. This `github.io` link is also copied into the `site_url` parameter in the `mkdocs.yml` file.
+A `github.io` link to the documentation is provided at the end of the deploy process. 
+
+  <p align="center">
+    <img title='Deploy' src=screenshots/deploy.jpg width="600">
+  </p>
+
+This link should be copied and pasted into the last line of the `README.md` file that has a sample placeholder link. This `github.io` link is also copied into the `site_url` parameter in the `mkdocs.yml` file.
 
 Right now, the documentation deployment is done however, to automate this deployment process, we are going to employ the use of GitHub Actions. [GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions) is a continuous integration and continuous delivery (CI/CD) platform that allows us to automate our build, test and deployment pipelines. We will make use of GitHub Actions to deploy the site each time a change is pushed from our local repository to our GitHub repository.
 
@@ -198,39 +204,35 @@ We will be creating a GitHub workflow to perform the task of deploying the docs 
     <img title='Setup workflow' src=screenshots/setup_workflow.jpg width="800">
   </p>
 
-  In the workflow file, the MkDocs material theme is installed and the docs are deployed. Make sure to edit the environment secrets according to the name you chose in this fields of the file, `MKDOCS` was used in this case:
+</ol>
+In the workflow file, the MkDocs material theme is installed and the docs are deployed. Make sure to edit the environment secrets according to the name you chose in this fields of the file, `MKDOCS` was used in this case:
 
 ```
 - run: pip install git+https://${MKDOCS}@github.com/squidfunk/mkdocs-material.git
-                                  .
-                                  .
-                                  .
+```
+
+And here:
+```
 env:
   GH_TOKEN: ${{secrets.MKDOCS}}
 ```
 
-The workflow name field can also be edited if needed. Now this workflow will push the docs to GitHub pages on your repository everytime a commit is made. 
+The workflow name field can also be edited if needed. After all the necessary edits have been made to the workflow file, click on Start commit to finish setting the workflow and commit the changes to the repository. This workflow will deploy and push the docs to GitHub pages on your repository everytime a commit is made to the project repository.  
 
-After all the necessary edits have been made to the workflow file, click on Start commit to finish setting the workflow and commit the changes to the repository.
+To ensure that both the local and GitHub repositories are up to date, pull the latest changes from GitHub using:
 
-</ol>
+```
+git pull
+```
 
-More information on environment secrets can be found [here](https://docs.github.com/en/actions/security-guides/encrypted-secrets)
-
-
-The GitHub Actions documentation details the various steps involved in this process
-
-* Pull the repo in vscode and commit the README change (and others), then push to the repo
-* workflow in README.md
-
-(to be completed)
-
-## Finishing Up
-
+Make the appropriate changes to the workflow link in the project `README.md` file as a sample link was used. Proceed as normal to add the changes to the staging area before committing and pushing them to the project GitHub repository.
 
 ## References
+
+More information on the packages and tools used can be found in the references below.
 
 - [MkDocs](https://www.mkdocs.org/getting-started/)
 - [Material theme](https://squidfunk.github.io/mkdocs-material/getting-started/)
 - [GitHub Pages](https://pages.github.com/)
 - [GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
+- [Encrypted Environment Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets)
